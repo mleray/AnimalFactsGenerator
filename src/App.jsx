@@ -22,10 +22,14 @@ function App() {
 
 	const getFact = animal => {
 		setDisabled(true);
-		getAnimalFact(animal).then(response => {
-			setCurrentFact(response.fact);
-			setDisabled(false);
-		});
+		getAnimalFact(animal)
+			.then(response => {
+				if (response && response.fact) {
+					setCurrentFact(response.fact);
+				}
+				setDisabled(false);
+			})
+			.catch(err => console.log(err));
 	};
 
 	const saveFact = () => {
