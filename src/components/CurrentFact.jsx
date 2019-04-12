@@ -15,7 +15,7 @@ const styles = {
 	}
 };
 
-function CurrentFact({ classes, fact, saveFact }) {
+function CurrentFact({ classes, fact = '', saveFact }) {
 	return (
 		<div className={classes.container}>
 			<Typography variant="h5" gutterBottom>

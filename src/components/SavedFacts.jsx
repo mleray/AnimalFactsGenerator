@@ -13,7 +13,7 @@ const styles = {
 	}
 };
 
-function SavedFacts({ classes, facts }) {
+function SavedFacts({ classes, facts = [] }) {
 	return (
 		<ExpansionPanel>
 			<ExpansionPanelSummary>
