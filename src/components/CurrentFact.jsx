@@ -14,7 +14,7 @@ const styles = {
 	}
 };
 
-function CurrentFact({ classes, fact }) {
+function CurrentFact({ classes, fact, saveFact }) {
 	return (
 		<div className={classes.container}>
 			<Typography variant="h5" gutterBottom>
@@ -23,7 +23,11 @@ function CurrentFact({ classes, fact }) {
 			<Typography component="p" gutterBottom>
 				{fact}
 			</Typography>
-			<Button variant="contained" color="secondary">
+			<Button
+				variant="contained"
+				color="secondary"
+				onClick={() => saveFact(fact)}
+			>
 				Save fact
 			</Button>
 		</div>
@@ -32,7 +36,8 @@ function CurrentFact({ classes, fact }) {
 
 CurrentFact.propTypes = {
 	classes: PropTypes.object.isRequired,
-	fact: PropTypes.string
+	fact: PropTypes.string,
+	saveFact: PropTypes.func
 };
 
 export default withStyles(styles)(CurrentFact);

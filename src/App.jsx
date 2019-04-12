@@ -27,6 +27,10 @@ function App() {
 		});
 	};
 
+	const saveFact = fact => {
+		setSavedFacts([...savedFacts, fact]);
+	};
+
 	useEffect(() => {
 		document.title = `Saved facts: ${savedFacts.length}`;
 	}, [savedFacts]);
@@ -49,7 +53,7 @@ function App() {
 					</Grid>
 				))}{' '}
 			</Grid>{' '}
-			{currentFact && <CurrentFact fact={currentFact} />}{' '}
+			{currentFact && <CurrentFact fact={currentFact} saveFact={saveFact} />}{' '}
 		</div>
 	);
 }
