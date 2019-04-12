@@ -23,9 +23,15 @@ function CurrentFact({ classes, fact, saveFact }) {
 			<Typography component="p" gutterBottom>
 				{fact}
 			</Typography>
-			<Button variant="contained" color="secondary" onClick={() => saveFact()}>
-				Save fact
-			</Button>
+			{fact && (
+				<Button
+					variant="contained"
+					color="secondary"
+					onClick={() => saveFact()}
+				>
+					Save fact
+				</Button>
+			)}
 		</div>
 	);
 }

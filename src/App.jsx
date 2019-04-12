@@ -29,6 +29,7 @@ function App() {
 
 	const saveFact = () => {
 		setSavedFacts([...savedFacts, currentFact]);
+		setCurrentFact('');
 	};
 
 	useEffect(() => {
@@ -52,7 +53,7 @@ function App() {
 					</Grid>
 				))}
 			</Grid>
-			{currentFact && <CurrentFact fact={currentFact} saveFact={saveFact} />}
+			<CurrentFact fact={currentFact} saveFact={saveFact} />
 		</div>
 	);
 }
