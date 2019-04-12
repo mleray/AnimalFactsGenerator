@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 // Components
 import AnimalCard from './components/AnimalCard';
 import CurrentFact from './components/CurrentFact';
+import SavedFacts from './components/SavedFacts';
 
 // Constants
 import ANIMALS from './constants/animals';
@@ -54,6 +55,7 @@ function App() {
 				))}
 			</Grid>
 			<CurrentFact fact={currentFact} saveFact={saveFact} />
+			<SavedFacts facts={savedFacts} />
 		</div>
 	);
 }
