@@ -51,9 +51,10 @@ function AnimalCard({
 
 AnimalCard.propTypes = {
 	animal: PropTypes.string,
-	classes: PropTypes.object,
-	image: PropTypes.string,
-	setCurrentFact: PropTypes.func
+	classes: PropTypes.object.isRequired,
+	disabled: PropTypes.bool,
+	getFact: PropTypes.func,
+	image: PropTypes.string
 };
 
 export default withStyles(styles)(AnimalCard);
