@@ -2,7 +2,7 @@
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 const apiUrl = 'https://some-random-api.ml/facts';
 
-async function getAnimalFact(animal = 'cat') {
+function getAnimalFact(animal = 'cat') {
     try {
         return fetch(`${proxyUrl + apiUrl}/${animal}`)
             .then(response => response.json());
