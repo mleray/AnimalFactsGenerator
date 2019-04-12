@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 const styles = {
 	container: {
 		marginTop: 20,
+		marginBottom: 20,
 		maxWidth: '50%',
 		margin: 'auto'
 	}

@@ -55,7 +55,7 @@ function App() {
 				))}
 			</Grid>
 			<CurrentFact fact={currentFact} saveFact={saveFact} />
-			<SavedFacts facts={savedFacts} />
+			{savedFacts.length > 0 && <SavedFacts facts={savedFacts} />}
 		</div>
 	);
 }
