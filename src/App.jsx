@@ -27,8 +27,8 @@ function App() {
 		});
 	};
 
-	const saveFact = fact => {
-		setSavedFacts([...savedFacts, fact]);
+	const saveFact = () => {
+		setSavedFacts([...savedFacts, currentFact]);
 	};
 
 	useEffect(() => {
@@ -38,10 +38,9 @@ function App() {
 	return (
 		<div style={{ textAlign: 'center', padding: 50 }}>
 			<Typography variant="h4" gutterBottom>
-				Random animal fact generator{' '}
-			</Typography>{' '}
+				Random animal fact generator
+			</Typography>
 			<Grid container justify="center" spacing={24}>
-				{' '}
 				{Object.keys(ANIMALS).map(animal => (
 					<Grid key={animal} item>
 						<AnimalCard
@@ -49,11 +48,11 @@ function App() {
 							disabled={disabled}
 							getFact={getFact}
 							image={ANIMALS[animal].image}
-						/>{' '}
+						/>
 					</Grid>
-				))}{' '}
-			</Grid>{' '}
-			{currentFact && <CurrentFact fact={currentFact} saveFact={saveFact} />}{' '}
+				))}
+			</Grid>
+			{currentFact && <CurrentFact fact={currentFact} saveFact={saveFact} />}
 		</div>
 	);
 }
