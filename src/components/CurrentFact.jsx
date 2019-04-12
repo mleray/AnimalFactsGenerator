@@ -10,7 +10,7 @@ const styles = {
 	container: {
 		marginTop: 20,
 		marginBottom: 20,
-		maxWidth: '50%',
+		maxWidth: '80%',
 		margin: 'auto'
 	}
 };
