@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 // Material-UI components
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 // Components
 import AnimalCard from './components/AnimalCard';
@@ -15,7 +16,14 @@ import ANIMALS from './constants/animals';
 // API
 import { getAnimalFact } from './api/requests';
 
-function App() {
+const styles = {
+	container: {
+		textAlign: 'center',
+		padding: 50
+	}
+};
+
+function App({ classes }) {
 	const [currentFact, setCurrentFact] = useState('');
 	const [disabled, setDisabled] = useState(false);
 	const [savedFacts, setSavedFacts] = useState([]);
@@ -42,7 +50,7 @@ function App() {
 	}, [savedFacts]);
 
 	return (
-		<div style={{ textAlign: 'center', padding: 50 }}>
+		<div className={classes.container}>
 			<Typography variant="h4" gutterBottom>
 				Random animal fact generator
 			</Typography>
@@ -64,4 +72,4 @@ function App() {
 	);
 }
 
-export default App;
+export default withStyles(styles)(App);
