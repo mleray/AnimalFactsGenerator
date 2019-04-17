@@ -23,7 +23,7 @@ function SavedFacts({ classes, facts = [] }) {
 			</ExpansionPanelSummary>
 			<ul>
 				{facts.map(fact => (
-					<li style={{ textAlign: 'left' }}>
+					<li className={classes.listItem}>
 						<Typography component="p">{fact}</Typography>
 					</li>
 				))}
