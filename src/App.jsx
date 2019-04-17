@@ -45,6 +45,14 @@ function App({ classes }) {
 		setCurrentFact('');
 	};
 
+	const deleteFact = index => {
+		const newSavedFacts = [...savedFacts];
+		if (index > -1 && index < savedFacts.length) {
+			newSavedFacts.splice(index, 1);
+			setSavedFacts(newSavedFacts);
+		}
+	};
+
 	useEffect(() => {
 		document.title = `Saved facts: ${savedFacts.length}`;
 	}, [savedFacts]);
@@ -67,7 +75,9 @@ function App({ classes }) {
 				))}
 			</Grid>
 			<CurrentFact fact={currentFact} saveFact={saveFact} />
-			{savedFacts.length > 0 && <SavedFacts facts={savedFacts} />}
+			{savedFacts.length > 0 && (
+				<SavedFacts deleteFact={deleteFact} facts={savedFacts} />
+			)}
 		</div>
 	);
 }
