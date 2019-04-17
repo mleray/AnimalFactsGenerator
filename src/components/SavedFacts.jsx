@@ -13,7 +13,8 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = {
 	listItem: {
 		textAlign: 'left',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		borderTop: 'thin solid lightgrey'
 	}
 };
 
